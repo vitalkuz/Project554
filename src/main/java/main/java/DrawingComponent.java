@@ -13,6 +13,8 @@ class DrawingComponent extends JPanel {
         Graphics2D drp = (Graphics2D)gh;
         int i = 0;
 
+        drp.drawOval(360, 360, 40, 40);
+
         while (i < solders.size()) {
             drawSolder(drp, solders.get(i), i);
             i++;
@@ -38,6 +40,16 @@ class DrawingComponent extends JPanel {
         }
 
         drp.fillOval(solders.get(i).getX(), solders.get(i).getY(), 20, 20);
+        if (solder.percentOfHp() > 0.75) {
+            drp.setColor(Color.green);
+        } else if (solder.percentOfHp() > 0.25) {
+            drp.setColor(Color.yellow);
+        } else {
+            drp.setColor(Color.red);
+        }
+        drp.fillRect(solders.get(i).getX()-5, solders.get(i).getY()-10, (int)(30 * solders.get(i).percentOfHp()),5);
+        drp.drawRect(solders.get(i).getX()-5, solders.get(i).getY()-10, 30,5);
+
     }
 
 }
