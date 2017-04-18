@@ -26,7 +26,7 @@ class Up7 extends JFrame {
         jcp.setBackground(Color.gray);
         setSize(width, height);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
 
@@ -34,13 +34,15 @@ class Up7 extends JFrame {
         boolean flagNotCaptured = true;
         Up7 field = new Up7();
         field.setVisible(true);
-        solders.add(new Solder(field, 200, 100, 0));
+        solders.add(new Solder(field, 300, 100, 0));
         solders.add(new Solder(field, 200, 200, 1));
         int i = 0;
-        while (i < 11) {
-            TimeUnit.SECONDS.sleep(1);
-            solders.get(1).move(200, 100 + i*10);
-            i++;
-        }
+//        while (i < 11) {
+//            TimeUnit.SECONDS.sleep(1);
+//            solders.get(1).move(200, 100 + i*10);
+//            i++;
+//        }
+
+
     }
 }
